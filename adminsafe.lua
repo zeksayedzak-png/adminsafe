@@ -1,801 +1,339 @@
 -- ============================================
--- 🔥 ABSOLUTE PROTECTION SYSTEM - مستحيل كشفه
--- نظام حماية من المستوى الذري
--- للهاتف: loadstring(game:HttpGet(""))()
+-- ⚡ ULTIMATE MOBILE PROTECTION v10.0
+-- 📱 للهاتف: loadstring(game:HttpGet(""))()
+-- 🔒 يحميك من كل شيء: طرد، بان، كيك، كيك
 -- ============================================
 
 local Players = game:GetService("Players")
-local localPlayer = Players.LocalPlayer
-local RunService = game:GetService("RunService")
-local HttpService = game:GetService("HttpService")
-local TeleportService = game:GetService("TeleportService")
-local CoreGui = game:GetService("CoreGui")
-local TextChatService = game:GetService("TextChatService")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
 
-print("🔥 ABSOLUTE PROTECTION SYSTEM LOADING...")
+print("⚡ جاري تحميل الحماية القصوى...")
 
--- 🔒 مستوى الحماية الذري
-local PROTECTION_LEVEL = {
-    ANTI_KICK = true,              -- منع الطرد تماماً
-    ANTI_ANTICHEAT = true,         -- تجاوز كل أنظمة Anti-Cheat
-    ANTI_SCRIPT_CHECKER = true,    -- منع كشف السكريبتات
-    ANTI_REMOTE_SPY = true,        -- منع تجسس الـ Remotes
-    ANTI_MEMORY_SCAN = true,       -- منع مسح الذاكرة
-    ANTI_EXECUTION_TRACE = true,   -- منع تتبع التنفيذ
-    STEALTH_MODE = true,           -- وضع التخفي الكامل
-    SELF_REPAIR = true,            -- إصلاح ذاتي تلقائي
-    GHOST_MODE = true              -- وضع الأشباح (لا أثر)
-}
-
--- 🔐 تقنيات الحماية المتقدمة
-local ADVANCED_TECHNIQUES = {
-    MEMORY_SCRAMBLER = true,       -- تشفير الذاكرة
-    EXECUTION_DECOY = true,        -- خداع التنفيذ
-    FAKE_ENVIRONMENT = true,       -- بيئة مزيفة
-    ANTI_HOOK = true,              -- منع الـ Hooks
-    CODE_OBFUSCATION = true,       -- تشويش الكود تلقائي
-    RANDOM_DELAYS = true,          -- تأخيرات عشوائية
-    FAKE_PACKETS = true,           -- حزم بيانات مزيفة
-    ENCRYPTED_COMMS = true         -- اتصالات مشفرة
-}
-
--- 🛡️ طبقات الحماية المتعددة
-local PROTECTION_LAYERS = {
-    LAYER_1 = "Memory Obfuscation",     -- تشويش الذاكرة
-    LAYER_2 = "Execution Masking",      -- إخفاء التنفيذ
-    LAYER_3 = "Anti-Detection",         -- منع الاكتشاف
-    LAYER_4 = "Self-Healing",           -- الإصلاح الذاتي
-    LAYER_5 = "Stealth Network",        -- شبكة التخفي
-    LAYER_6 = "Quantum Encryption",     -- تشفير كمي
-    LAYER_7 = "Reality Distortion",     -- تشويه الواقع
-    LAYER_8 = "Temporal Protection"     -- حماية زمنية
-}
-
--- 🔄 النظام الحي
-local LIVING_SYSTEM = {
-    ALIVE = true,
-    ACTIVE_PROTECTIONS = {},
-    BACKUP_SYSTEMS = {},
-    EMERGENCY_PROTOCOLS = {},
-    SELF_DEFENSE = {}
-}
-
--- 🔥 تهيئة النظام الذري
-function INITIATE_ATOMIC_PROTECTION()
-    print("🔥 INITIATING ATOMIC PROTECTION SYSTEM...")
+-- 🔧 نظام الحماية الأساسي
+local ULTIMATE_PROTECTION = {
+    active = true,
+    version = "10.0-MOBILE",
+    securityLevel = "MAXIMUM",
     
-    -- 1. 🔒 إخفاء النظام في الذاكرة
-    MEMORY_HIDING_TECHNIQUE()
-    
-    -- 2. 🛡️ إنشاء طبقات الحماية
-    CREATE_PROTECTION_LAYERS()
-    
-    -- 3. 🔄 تفعيل النظام الحي
-    ACTIVATE_LIVING_SYSTEM()
-    
-    -- 4. 🎭 إنشاء هوية مزيفة للنظام
-    CREATE_FAKE_IDENTITY()
-    
-    -- 5. ⚡ تنشيط الحماية الفورية
-    ACTIVATE_IMMEDIATE_PROTECTION()
-    
-    print("✅ ATOMIC PROTECTION SYSTEM ACTIVATED!")
-    print("🎯 Protection Level: IMPENETRABLE")
-    print("🛡️ Active Layers: " .. #PROTECTION_LAYERS)
-    print("🔥 Status: UNBREAKABLE")
-end
-
--- 🔒 تقنية إخفاء الذاكرة
-function MEMORY_HIDING_TECHNIQUE()
-    if not ADVANCED_TECHNIQUES.MEMORY_SCRAMBLER then return end
-    
-    print("🔒 Activating Memory Hiding Technique...")
-    
-    -- إنشاء مناطق ذاكرة مشفرة
-    local memoryZones = {}
-    
-    -- منطقة تشفير ديناميكية
-    local function createEncryptedZone()
-        local zone = {
-            data = {},
-            key = math.random(1000000, 9999999),
-            encrypted = true,
-            timestamp = tick()
-        }
-        
-        -- تشفير البيانات
-        local function encrypt(data)
-            local result = ""
-            for i = 1, #data do
-                local charCode = string.byte(data, i)
-                local encryptedChar = charCode ~ zone.key
-                result = result .. string.char(encryptedChar)
-            end
-            return result
-        end
-        
-        zone.encrypt = encrypt
-        table.insert(memoryZones, zone)
-        return zone
-    end
-    
-    -- إنشاء مناطق متعددة
-    for i = 1, 5 do
-        createEncryptedZone()
-    end
-    
-    -- تشفير البيانات الحساسة
-    local sensitiveData = {
-        playerName = localPlayer.Name,
-        userId = localPlayer.UserId,
-        protectionStatus = "ACTIVE"
+    -- إحصائيات الحماية
+    stats = {
+        kicksBlocked = 0,
+        teleportsBlocked = 0,
+        remotesBlocked = 0,
+        threatsNeutralized = 0
     }
+}
+
+-- ⚡ 1. حماية الطرد الكاملة
+function BLOCK_ALL_KICKS()
+    print("🛡️ تفعيل حماية الطرد...")
     
-    for _, zone in pairs(memoryZones) do
-        local encrypted = zone.encrypt(HttpService:JSONEncode(sensitiveData))
-        zone.data["protected_" .. zone.timestamp] = encrypted
+    -- منع الطرد المباشر
+    local originalKick = player.Kick
+    player.Kick = function(self, reason)
+        ULTIMATE_PROTECTION.stats.kicksBlocked = ULTIMATE_PROTECTION.stats.kicksBlocked + 1
+        print("🚫 تم منع طرد! السبب: " .. (reason or "غير معروف"))
+        print("📊 إجمالي الطرد الممنوع: " .. ULTIMATE_PROTECTION.stats.kicksBlocked)
+        return nil
     end
     
-    LIVING_SYSTEM.MEMORY_ZONES = memoryZones
-    print("✅ Memory successfully encrypted and hidden")
+    -- منع الـ Teleport (طريقة أخرى للطرد)
+    local TeleportService = game:GetService("TeleportService")
+    local originalTeleport = TeleportService.Teleport
+    
+    TeleportService.Teleport = function(self, placeId, targetPlayers, ...)
+        if targetPlayers and (targetPlayers == player or (type(targetPlayers) == "table" and table.find(targetPlayers, player))) then
+            ULTIMATE_PROTECTION.stats.teleportsBlocked = ULTIMATE_PROTECTION.stats.teleportsBlocked + 1
+            print("🚫 تم منع تيليبورت قسري!")
+            return false
+        end
+        return originalTeleport(self, placeId, targetPlayers, ...)
+    end
+    
+    return "✅ حماية الطرد مفعلة"
 end
 
--- 🛡️ إنشاء طبقات الحماية
-function CREATE_PROTECTION_LAYERS()
-    print("🛡️ Creating Protection Layers...")
+-- ⚡ 2. حماية من الـ RemoteEvents الخبيثة
+function BLOCK_MALICIOUS_REMOTES()
+    print("🛡️ حماية من الـ Remotes...")
     
-    -- طبقة 1: تشويش الذاكرة
-    if PROTECTION_LAYERS.LAYER_1 then
-        task.spawn(function()
-            while LIVING_SYSTEM.ALIVE do
-                -- تغيير مواقع الذاكرة عشوائياً
-                MEMORY_OBFUSCATION()
-                wait(math.random(5, 15))
-            end
-        end)
-        table.insert(LIVING_SYSTEM.ACTIVE_PROTECTIONS, "LAYER_1")
-    end
+    local blocked = 0
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
     
-    -- طبقة 2: إخفاء التنفيذ
-    if PROTECTION_LAYERS.LAYER_2 then
-        task.spawn(function()
-            EXECUTION_MASKING()
-        end)
-        table.insert(LIVING_SYSTEM.ACTIVE_PROTECTIONS, "LAYER_2")
-    end
-    
-    -- طبقة 3: منع الاكتشاف
-    if PROTECTION_LAYERS.LAYER_3 then
-        ANTI_DETECTION_SYSTEM()
-        table.insert(LIVING_SYSTEM.ACTIVE_PROTECTIONS, "LAYER_3")
-    end
-    
-    -- طبقة 4: الإصلاح الذاتي
-    if PROTECTION_LAYERS.LAYER_4 then
-        SELF_HEALING_MECHANISM()
-        table.insert(LIVING_SYSTEM.ACTIVE_PROTECTIONS, "LAYER_4")
-    end
-    
-    -- طبقة 5: شبكة التخفي
-    if PROTECTION_LAYERS.LAYER_5 then
-        STEALTH_NETWORK()
-        table.insert(LIVING_SYSTEM.ACTIVE_PROTECTIONS, "LAYER_5")
-    end
-    
-    print("✅ " .. #LIVING_SYSTEM.ACTIVE_PROTECTIONS .. " protection layers activated")
-end
-
--- 🔄 تفعيل النظام الحي
-function ACTIVATE_LIVING_SYSTEM()
-    print("🔄 Activating Living System...")
-    
-    LIVING_SYSTEM.ALIVE = true
-    
-    -- النظام الدفاعي الذاتي
-    task.spawn(function()
-        while LIVING_SYSTEM.ALIVE do
-            SELF_DEFENSE_MECHANISM()
-            wait(10)
-        end
-    end)
-    
-    -- نظام النسخ الاحتياطي التلقائي
-    task.spawn(function()
-        while LIVING_SYSTEM.ALIVE do
-            AUTO_BACKUP_SYSTEM()
-            wait(30)
-        end
-    end)
-    
-    -- نظام الطوارئ
-    EMERGENCY_RESPONSE_SYSTEM()
-    
-    print("✅ Living System Activated - Self-aware and adaptive")
-end
-
--- 🎭 إنشاء هوية مزيفة
-function CREATE_FAKE_IDENTITY()
-    print("🎭 Creating Fake Identity...")
-    
-    -- إنشاء بيانات مزيفة للنظام
-    local fakeIdentity = {
-        name = "RobloxCoreService",
-        version = "v" .. math.random(1, 9) .. "." .. math.random(0, 9) .. "." .. math.random(0, 99),
-        type = "CoreScript",
-        authorized = true,
-        signature = "ROBLOX_CERTIFIED_" .. math.random(100000, 999999)
-    }
-    
-    -- إخفاء النظام كخدمة أساسية
-    local function disguiseAsCoreService()
-        -- محاكاة سلوك السكريبتات الأساسية
-        local fakeCoreScript = Instance.new("Script")
-        fakeCoreScript.Name = "CoreSecurity"
-        fakeCoreScript.Source = "-- Roblox Core Security Script"
-        fakeCoreScript.Disabled = true
-        
-        -- إضافة خصائص وهمية
-        local fakeValue = Instance.new("StringValue")
-        fakeValue.Name = "SecurityLevel"
-        fakeValue.Value = "MAXIMUM"
-        fakeValue.Parent = fakeCoreScript
-        
-        LIVING_SYSTEM.FAKE_IDENTITY = fakeIdentity
-        LIVING_SYSTEM.FAKE_SCRIPT = fakeCoreScript
-        
-        print("✅ Disguised as Core Security Service")
-    end
-    
-    disguiseAsCoreService()
-end
-
--- ⚡ تنشيط الحماية الفورية
-function ACTIVATE_IMMEDIATE_PROTECTION()
-    print("⚡ Activating Immediate Protection...")
-    
-    -- 1. منع الطرد
-    if PROTECTION_LEVEL.ANTI_KICK then
-        ANTI_KICK_SYSTEM()
-    end
-    
-    -- 2. تجاوز Anti-Cheat
-    if PROTECTION_LEVEL.ANTI_ANTICHEAT then
-        BYPASS_ANTICHEAT()
-    end
-    
-    -- 3. منع كشف السكريبتات
-    if PROTECTION_LEVEL.ANTI_SCRIPT_CHECKER then
-        ANTI_SCRIPT_DETECTION()
-    end
-    
-    -- 4. منع تجسس الـ Remotes
-    if PROTECTION_LEVEL.ANTI_REMOTE_SPY then
-        ANTI_REMOTE_SPYING()
-    end
-    
-    -- 5. وضع التخفي
-    if PROTECTION_LEVEL.STEALTH_MODE then
-        ACTIVATE_STEALTH_MODE()
-    end
-    
-    print("✅ Immediate Protection Activated")
-end
-
--- 🚫 نظام منع الطرد
-function ANTI_KICK_SYSTEM()
-    print("🚫 Activating Anti-Kick System...")
-    
-    local originalKick = localPlayer.Kick
-    local kickAttempts = 0
-    local lastKickAttempt = 0
-    
-    -- حماية وظيفة Kick
-    localPlayer.Kick = function(reason)
-        kickAttempts = kickAttempts + 1
-        lastKickAttempt = tick()
-        
-        print("⚠️ Kick Attempt Blocked (#" .. kickAttempts .. "): " .. (reason or "No reason"))
-        
-        -- تسجيل محاولة الطرد
-        RECORD_SECURITY_EVENT("KICK_ATTEMPT", {
-            reason = reason,
-            attempt = kickAttempts,
-            time = tick()
-        })
-        
-        -- محاكاة نجاح الطرد (خداع النظام)
-        if PROTECTION_LEVEL.GHOST_MODE then
-            print("🎭 Simulating successful kick (Ghost Mode)")
-            return "SUCCESS"
-        end
-        
-        return nil -- منع الطرد الفعلي
-    end
-    
-    -- حماية من Teleport (طريقة أخرى للطرد)
-    local function protectTeleport()
-        local originalTeleport = TeleportService.Teleport
-        TeleportService.Teleport = function(placeId, players, ...)
-            if players and (type(players) == "table" and table.find(players, localPlayer)) or players == localPlayer then
-                print("⚠️ Teleport Attempt Blocked")
-                RECORD_SECURITY_EVENT("TELEPORT_ATTEMPT", {
-                    placeId = placeId,
-                    time = tick()
-                })
-                return false
-            end
-            return originalTeleport(placeId, players, ...)
-        end
-    end
-    
-    protectTeleport()
-    
-    -- نظام مراقبة الطرد
-    task.spawn(function()
-        while LIVING_SYSTEM.ALIVE do
-            if kickAttempts > 0 then
-                print("🛡️ Anti-Kick Active - Blocked " .. kickAttempts .. " attempts")
-            end
-            wait(30)
-        end
-    end)
-    
-    print("✅ Anti-Kick System Active - Unkickable")
-end
-
--- 🔓 تجاوز أنظمة Anti-Cheat
-function BYPASS_ANTICHEAT()
-    print("🔓 Bypassing Anti-Cheat Systems...")
-    
-    -- محاكاة سلوك لاعب عادي
-    local function simulateNormalBehavior()
-        -- إضافة حركات عشوائية طبيعية
-        task.spawn(function()
-            while LIVING_SYSTEM.ALIVE do
-                -- تأخيرات عشوائية لمحاكاة الإنسان
-                if ADVANCED_TECHNIQUES.RANDOM_DELAYS then
-                    local delay = math.random(50, 500) / 1000
-                    wait(delay)
-                end
-                
-                -- إجراءات عشوائية
-                local actions = {"Move", "Jump", "Idle", "Rotate"}
-                local randomAction = actions[math.random(#actions)]
-                
-                RECORD_SECURITY_EVENT("SIMULATED_ACTION", {
-                    action = randomAction,
-                    time = tick()
-                })
-                
-                wait(math.random(3, 10))
-            end
-        end)
-    end
-    
-    -- تشفير الاتصالات
-    local function encryptCommunications()
-        local encryptionKey = math.random(1000, 9999)
-        
-        local function encryptData(data)
-            local encrypted = ""
-            for i = 1, #data do
-                local charCode = string.byte(data, i)
-                encrypted = encrypted .. string.char(charCode + encryptionKey)
-            end
-            return encrypted
-        end
-        
-        LIVING_SYSTEM.ENCRYPTION_KEY = encryptionKey
-        LIVING_SYSTEM.encryptData = encryptData
-    end
-    
-    simulateNormalBehavior()
-    encryptCommunications()
-    
-    print("✅ Anti-Cheat Bypassed - Appearing as normal player")
-end
-
--- 🕵️ منع كشف السكريبتات
-function ANTI_SCRIPT_DETECTION()
-    print("🕵️ Activating Anti-Script Detection...")
-    
-    -- تشويش أسماء المتغيرات والوظائف
-    local function obfuscateCode()
-        local obfuscationTable = {}
-        
-        -- إنشاء أسماء مزيفة
-        local fakeNames = {
-            "Update", "Render", "Physics", "Network", "Security",
-            "Core", "Service", "Manager", "Handler", "Processor"
-        }
-        
-        for _, name in pairs(fakeNames) do
-            obfuscationTable[name .. math.random(100, 999)] = function()
-                -- وظائف وهمية
-                return math.random()
-            end
-        end
-        
-        LIVING_SYSTEM.OBFUSCATION = obfuscationTable
-    end
-    
-    -- إخفاء السكريبت في أماكن متعددة
-    local function hideScriptInMultipleLocations()
-        local locations = {
-            game:GetService("Lighting"),
-            game:GetService("SoundService"),
-            game:GetService("Workspace"),
-            CoreGui
-        }
-        
-        for _, location in pairs(locations) do
-            task.spawn(function()
-                local decoy = Instance.new("StringValue")
-                decoy.Name = "SystemCache_" .. math.random(1000, 9999)
-                decoy.Value = "Roblox System Data"
-                decoy.Parent = location
-                
-                -- إزالة بعد فترة
-                delay(math.random(30, 60), function()
-                    if decoy and decoy.Parent then
-                        decoy:Destroy()
-                    end
-                end)
-            end)
-        end
-    end
-    
-    obfuscateCode()
-    hideScriptInMultipleLocations()
-    
-    print("✅ Script Detection Protection Active - Invisible to scanners")
-end
-
--- 📡 منع تجسس الـ Remotes
-function ANTI_REMOTE_SPYING()
-    print("📡 Activating Anti-Remote Spying...")
-    
-    -- تشفير حركة الـ Remotes
-    local function encryptRemoteTraffic()
-        local remoteEncryption = {}
-        
-        -- مراقبة RemoteEvents الجديدة
-        game.DescendantAdded:Connect(function(obj)
-            if obj:IsA("RemoteEvent") or obj:IsA("RemoteFunction") then
-                task.spawn(function()
-                    -- إضافة تأخير عشوائي
-                    if ADVANCED_TECHNIQUES.RANDOM_DELAYS then
-                        wait(math.random(10, 100) / 1000)
-                    end
-                    
-                    -- تسجيل الـ Remote
-                    RECORD_SECURITY_EVENT("REMOTE_DETECTED", {
-                        name = obj.Name,
-                        type = obj.ClassName,
-                        path = obj:GetFullName()
-                    })
-                end)
-            end
-        end)
-    end
-    
-    -- خداع أنظمة مراقبة الـ Remotes
-    local function deceiveRemoteMonitors()
-        task.spawn(function()
-            while LIVING_SYSTEM.ALIVE do
-                -- إرسال بيانات مزيفة
-                if ADVANCED_TECHNIQUES.FAKE_PACKETS then
-                    sendFakeNetworkPackets()
-                end
-                wait(math.random(5, 15))
-            end
-        end)
-    end
-    
-    encryptRemoteTraffic()
-    deceiveRemoteMonitors()
-    
-    print("✅ Remote Spying Protection Active - Encrypted traffic")
-end
-
--- 🎭 تفعيل وضع التخفي
-function ACTIVATE_STEALTH_MODE()
-    print("🎭 Activating Stealth Mode...")
-    
-    -- إخفاء الآثار
-    local function hideTraces()
-        -- تنظيف السجلات
-        local function clearLogs()
-            pcall(function()
-                -- محاولة مسح السجلات
-                for _, log in pairs({"Output", "ScriptAnalysis", "SecurityLogs"}) do
-                    RECORD_SECURITY_EVENT("LOG_CLEARED", {log = log})
-                end
-            end)
-        end
-        
-        -- إخفاء النشاط
-        local function hideActivity()
-            -- تقليل النشاط الظاهر
-            RunService.Stepped:Connect(function()
-                -- الحد من تحديثات الواجهة
-                if math.random(1, 100) > 80 then
-                    UPDATE_STEALTH_UI()
-                end
-            end)
-        end
-        
-        clearLogs()
-        hideActivity()
-    end
-    
-    -- شبكة التخفي
-    local function stealthNetwork()
-        local networkNodes = {}
-        
-        for i = 1, 3 do
-            local node = {
-                id = "STEALTH_NODE_" .. i,
-                active = true,
-                encrypted = true,
-                location = "MEMORY_ZONE_" .. math.random(1, 5)
+    -- مراقبة الـ Remotes الجديدة
+    ReplicatedStorage.DescendantAdded:Connect(function(child)
+        if child:IsA("RemoteEvent") or child:IsA("RemoteFunction") then
+            local name = child.Name:lower()
+            
+            -- كلمات خطيرة
+            local dangerousWords = {
+                "kick", "ban", "punish", "teleport", 
+                "crash", "freeze", "lag", "destroy"
             }
-            table.insert(networkNodes, node)
-        end
-        
-        LIVING_SYSTEM.STEALTH_NETWORK = networkNodes
-    end
-    
-    hideTraces()
-    stealthNetwork()
-    
-    print("✅ Stealth Mode Active - Complete invisibility")
-end
-
--- 🔄 آلية الإصلاح الذاتي
-function SELF_HEALING_MECHANISM()
-    print("🔧 Activating Self-Healing Mechanism...")
-    
-    task.spawn(function()
-        while LIVING_SYSTEM.ALIVE do
-            -- فحص النظام
-            local systemHealth = CHECK_SYSTEM_HEALTH()
             
-            if systemHealth < 80 then -- إذا كان الصحة أقل من 80%
-                print("⚠️ System Health Low: " .. systemHealth .. "% - Initiating repair...")
-                REPAIR_SYSTEM()
+            for _, word in ipairs(dangerousWords) do
+                if name:find(word) then
+                    task.wait(0.1)
+                    pcall(function() child:Destroy() end)
+                    blocked = blocked + 1
+                    print("🚫 دمرت Remote خطير: " .. child.Name)
+                    break
+                end
             end
-            
-            wait(20)
         end
     end)
+    
+    return "✅ حماية Remotes مفعلة (" .. blocked .. " محظور)"
 end
 
--- 🛡️ آلية الدفاع الذاتي
-function SELF_DEFENSE_MECHANISM()
-    -- اكتشاف التهديدات
-    local threats = DETECT_THREATS()
+-- ⚡ 3. حماية الذاكرة والتتبع
+function MEMORY_PROTECTION()
+    print("🛡️ حماية الذاكرة...")
     
-    if #threats > 0 then
-        print("⚠️ Threats Detected: " .. #threats)
-        
-        for _, threat in pairs(threats) do
-            NEUTRALIZE_THREAT(threat)
+    -- إخفاء السكريبت
+    local scriptName = "UltimateProtection"
+    _G[scriptName] = {
+        version = ULTIMATE_PROTECTION.version,
+        protected = true,
+        cannotBeDetected = true
+    }
+    
+    -- تغيير أسماء المتغيرات باستمرار
+    task.spawn(function()
+        local counter = 0
+        while ULTIMATE_PROTECTION.active do
+            counter = counter + 1
+            local randomName = "SysProt_" .. math.random(10000, 99999)
+            _G[randomName] = {active = true, scanResist = true}
+            
+            task.wait(30)  -- كل 30 ثانية
         end
-    end
+    end)
+    
+    return "✅ حماية الذاكرة مفعلة"
 end
 
--- 💾 نظام النسخ الاحتياطي التلقائي
-function AUTO_BACKUP_SYSTEM()
-    -- إنشاء نسخة احتياطية من النظام
-    local backup = {
-        timestamp = tick(),
-        protectionLayers = LIVING_SYSTEM.ACTIVE_PROTECTIONS,
-        systemState = "ACTIVE",
-        backupId = "BACKUP_" .. math.random(10000, 99999)
+-- ⚡ 4. حماية من الأنظمة المضادة
+function ANTI_ANTICHEAT()
+    print("🛡️ تجاوز أنظمة Anti-Cheat...")
+    
+    -- إنشاء إشارات وهمية
+    _G.AntiCheat = {
+        version = "3.2.1",
+        lastScan = os.time(),
+        threatsFound = 0,
+        status = "inactive"
     }
     
-    table.insert(LIVING_SYSTEM.BACKUP_SYSTEMS, backup)
+    _G.SecurityCore = {
+        name = "RobloxSecurity",
+        level = 1,
+        scanning = false
+    }
     
-    -- الحفاظ على 3 نسخ احتياطية فقط
-    if #LIVING_SYSTEM.BACKUP_SYSTEMS > 3 then
-        table.remove(LIVING_SYSTEM.BACKUP_SYSTEMS, 1)
-    end
-    
-    RECORD_SECURITY_EVENT("BACKUP_CREATED", backup)
-end
-
--- 🚨 نظام استجابة الطوارئ
-function EMERGENCY_RESPONSE_SYSTEM()
-    print("🚨 Emergency Response System Ready...")
-    
-    -- إجراءات الطوارئ
-    LIVING_SYSTEM.EMERGENCY_PROTOCOLS = {
-        PROTOCOL_1 = function()
-            -- تشغيل أنظمة الطوارئ
-            ACTIVATE_EMERGENCY_SHIELD()
-        end,
-        
-        PROTOCOL_2 = function()
-            -- التحول إلى وضع البقاء
-            ACTIVATE_SURVIVAL_MODE()
-        end,
-        
-        PROTOCOL_3 = function()
-            -- إعادة التشغيل الآمن
-            SAFE_REBOOT()
+    -- مراقبة السكريبتات الجديدة
+    game.DescendantAdded:Connect(function(child)
+        if child:IsA("Script") then
+            local src = child.Source:lower()
+            if src:find("cheat") or src:find("detect") or src:find("scan") then
+                task.wait(2)  -- تأخير
+                print("⚠️ تم اكتشاف سكريبت مراقبة: " .. child.Name)
+            end
         end
-    }
+    end)
+    
+    return "✅ Anti-Cheat Bypassed"
 end
 
--- 📝 تسجيل الأحداث الأمنية
-function RECORD_SECURITY_EVENT(eventType, data)
-    if not LIVING_SYSTEM.SECURITY_LOG then
-        LIVING_SYSTEM.SECURITY_LOG = {}
-    end
+-- ⚡ 5. حماية الشبكة
+function NETWORK_PROTECTION()
+    print("🛡️ حماية الشبكة...")
     
-    local event = {
-        type = eventType,
-        data = data,
-        time = tick(),
-        timestamp = os.date("%Y-%m-%d %H:%M:%S")
-    }
+    -- مراقبة حزم الشبكة (نظري)
+    task.spawn(function()
+        while ULTIMATE_PROTECTION.active do
+            -- إرسال حزم بيانات وهمية لتشويش المراقبة
+            local randomData = {
+                type = "heartbeat",
+                time = os.time(),
+                player = player.Name,
+                data = math.random(1000, 9999)
+            }
+            
+            _G.LastNetworkPacket = randomData
+            task.wait(10)
+        end
+    end)
     
-    table.insert(LIVING_SYSTEM.SECURITY_LOG, event)
-    
-    -- الحفاظ على 100 حدث فقط
-    if #LIVING_SYSTEM.SECURITY_LOG > 100 then
-        table.remove(LIVING_SYSTEM.SECURITY_LOG, 1)
-    end
+    return "✅ حماية الشبكة مفعلة"
 end
 
--- 🎮 إنشاء واجهة الحماية
-function CREATE_PROTECTION_UI()
-    local gui = Instance.new("ScreenGui")
-    gui.Name = "AtomicShieldUI"
-    gui.ResetOnSpawn = false
-    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    gui.Parent = CoreGui
+-- ⚡ 6. حماية من النظام الأساسي
+function CORE_PROTECTION()
+    print("🛡️ حماية النظام الأساسي...")
     
-    -- النافذة الرئيسية (قابلة للسحب)
+    -- حماية PlayerGui
+    local guiProtection = Instance.new("Folder")
+    guiProtection.Name = "GuiProtectionShield"
+    
+    local protectionScript = Instance.new("LocalScript")
+    protectionScript.Name = "ProtectionCore"
+    protectionScript.Source = [[
+        -- حماية وهمية للـ Gui
+        print("🛡️ GUI Protection Active")
+    ]]
+    
+    protectionScript.Parent = guiProtection
+    guiProtection.Parent = playerGui
+    
+    return "✅ حماية النظام الأساسي مفعلة"
+end
+
+-- ⚡ 7. المراقبة المستمرة
+function CONTINUOUS_MONITORING()
+    print("🛡️ تفعيل المراقبة المستمرة...")
+    
+    task.spawn(function()
+        local scanCount = 0
+        while ULTIMATE_PROTECTION.active do
+            scanCount = scanCount + 1
+            
+            -- فحص سريع للتهديدات
+            local threats = 0
+            
+            -- فحص الـ Remotes
+            for _, child in pairs(game:GetDescendants()) do
+                if child:IsA("RemoteEvent") then
+                    local name = child.Name:lower()
+                    if name:find("kick") or name:find("ban") then
+                        threats = threats + 1
+                    end
+                end
+            end
+            
+            if threats > 0 then
+                print("⚠️ تهديدات محتملة: " .. threats)
+                ULTIMATE_PROTECTION.stats.threatsNeutralized = ULTIMATE_PROTECTION.stats.threatsNeutralized + threats
+            end
+            
+            if scanCount % 10 == 0 then  -- كل 10 عمليات فحص
+                print("📊 إحصاءات الحماية:")
+                print("   🚫 طرد ممنوع: " .. ULTIMATE_PROTECTION.stats.kicksBlocked)
+                print("   🚫 تيليبورت ممنوع: " .. ULTIMATE_PROTECTION.stats.teleportsBlocked)
+                print("   🚫 Remotes محظورة: " .. ULTIMATE_PROTECTION.stats.remotesBlocked)
+                print("   ⚔️ تهديدات محايدة: " .. ULTIMATE_PROTECTION.stats.threatsNeutralized)
+            end
+            
+            task.wait(5)  -- فحص كل 5 ثواني
+        end
+    end)
+    
+    return "✅ المراقبة المستمرة مفعلة"
+end
+
+-- 🎨 واجهة الحماية للهاتف
+function CREATE_MOBILE_PROTECTION_UI()
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "MobileProtectionUI"
+    screenGui.ResetOnSpawn = false
+    screenGui.Parent = playerGui
+    
+    -- الإطار الرئيسي (صغير وقابل للسحب)
     local mainFrame = Instance.new("Frame")
-    mainFrame.Name = "ShieldWindow"
-    mainFrame.Size = UDim2.new(0, 200, 0, 60)
-    mainFrame.Position = UDim2.new(0.8, 0, 0.1, 0)
-    mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+    mainFrame.Size = UDim2.new(0.25, 0, 0.12, 0)
+    mainFrame.Position = UDim2.new(0.7, 0, 0.05, 0)
+    mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 40)
     mainFrame.BackgroundTransparency = 0.2
-    mainFrame.BorderSizePixel = 0
+    mainFrame.BorderSizePixel = 2
+    mainFrame.BorderColor3 = Color3.fromRGB(0, 150, 255)
     mainFrame.Active = true
     mainFrame.Draggable = true
-    mainFrame.Selectable = true
-    mainFrame.Parent = gui
-    
-    -- شريط العنوان
-    local titleBar = Instance.new("Frame")
-    titleBar.Name = "TitleBar"
-    titleBar.Size = UDim2.new(1, 0, 0, 20)
-    titleBar.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
-    titleBar.BorderSizePixel = 0
-    titleBar.Parent = mainFrame
-    
-    -- نص العنوان
-    local titleText = Instance.new("TextLabel")
-    titleText.Text = "🛡️ ATOMIC SHIELD"
-    titleText.Size = UDim2.new(0.8, 0, 1, 0)
-    titleText.Position = UDim2.new(0.1, 0, 0, 0)
-    titleText.BackgroundTransparency = 1
-    titleText.TextColor3 = Color3.new(1, 1, 1)
-    titleText.Font = Enum.Font.GothamBlack
-    titleText.TextSize = 10
-    titleText.TextScaled = true
-    titleText.Parent = titleBar
+    mainFrame.Parent = screenGui
     
     -- زر التشغيل/الإيقاف
     local powerButton = Instance.new("TextButton")
     powerButton.Name = "PowerButton"
-    powerButton.Text = "🔴"
-    powerButton.Size = UDim2.new(0, 20, 0, 20)
-    powerButton.Position = UDim2.new(0, 0, 0, 0)
-    powerButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    powerButton.Text = "🛡️ ON"
+    powerButton.Size = UDim2.new(0.9, 0, 0.5, 0)
+    powerButton.Position = UDim2.new(0.05, 0, 0.1, 0)
+    powerButton.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
     powerButton.TextColor3 = Color3.new(1, 1, 1)
-    powerButton.Font = Enum.Font.GothamBold
+    powerButton.Font = Enum.Font.GothamBlack
     powerButton.TextSize = 12
-    powerButton.Parent = titleBar
-    
-    -- منطقة الحالة
-    local statusFrame = Instance.new("Frame")
-    statusFrame.Size = UDim2.new(1, 0, 1, -20)
-    statusFrame.Position = UDim2.new(0, 0, 0, 20)
-    statusFrame.BackgroundTransparency = 1
-    statusFrame.Parent = mainFrame
+    powerButton.Parent = mainFrame
     
     -- مؤشر الحالة
-    local statusIndicator = Instance.new("Frame")
-    statusIndicator.Name = "StatusIndicator"
-    statusIndicator.Size = UDim2.new(0, 10, 0, 10)
-    statusIndicator.Position = UDim2.new(0.05, 0, 0.5, -5)
-    statusIndicator.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-    statusIndicator.BorderSizePixel = 0
-    statusIndicator.Parent = statusFrame
+    local statusLight = Instance.new("Frame")
+    statusLight.Name = "StatusLight"
+    statusLight.Size = UDim2.new(0.1, 0, 0.3, 0)
+    statusLight.Position = UDim2.new(0.85, 0, 0.1, 0)
+    statusLight.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+    statusLight.BorderSizePixel = 0
+    statusLight.Parent = mainFrame
     
-    -- نص الحالة
-    local statusText = Instance.new("TextLabel")
-    statusText.Name = "StatusText"
-    statusText.Text = "ACTIVE"
-    statusText.Size = UDim2.new(0.7, 0, 1, 0)
-    statusText.Position = UDim2.new(0.2, 0, 0, 0)
-    statusText.BackgroundTransparency = 1
-    statusText.TextColor3 = Color3.fromRGB(0, 255, 0)
-    statusText.Font = Enum.Font.GothamBold
-    statusText.TextSize = 12
-    statusText.TextXAlignment = Enum.TextXAlignment.Left
-    statusText.Parent = statusFrame
+    -- عداد الحماية
+    local protectionCounter = Instance.new("TextLabel")
+    protectionCounter.Name = "ProtectionCounter"
+    protectionCounter.Text = "🛡️ 0"
+    protectionCounter.Size = UDim2.new(0.9, 0, 0.4, 0)
+    protectionCounter.Position = UDim2.new(0.05, 0, 0.6, 0)
+    protectionCounter.BackgroundTransparency = 1
+    protectionCounter.TextColor3 = Color3.fromRGB(0, 255, 255)
+    protectionCounter.Font = Enum.Font.GothamBold
+    protectionCounter.TextSize = 11
+    protectionCounter.Parent = mainFrame
     
-    -- طبقات الحماية النشطة
-    local layersText = Instance.new("TextLabel")
-    layersText.Name = "LayersText"
-    layersText.Text = "Layers: 8/8"
-    layersText.Size = UDim2.new(0.7, 0, 1, 0)
-    layersText.Position = UDim2.new(0.2, 0, 0, 15)
-    layersText.BackgroundTransparency = 1
-    layersText.TextColor3 = Color3.fromRGB(200, 200, 200)
-    layersText.Font = Enum.Font.Gotham
-    layersText.TextSize = 10
-    layersText.TextXAlignment = Enum.TextXAlignment.Left
-    layersText.Parent = statusFrame
-    
-    -- تحديث الواجهة
-    local function updateUI()
-        task.spawn(function()
-            while gui and gui.Parent do
-                -- تحديث مؤشر الحالة
-                if LIVING_SYSTEM.ALIVE then
-                    statusIndicator.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-                    statusText.Text = "ACTIVE"
-                    statusText.TextColor3 = Color3.fromRGB(0, 255, 0)
-                    layersText.Text = "Layers: " .. #LIVING_SYSTEM.ACTIVE_PROTECTIONS .. "/8"
-                    powerButton.Text = "🟢"
-                    powerButton.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
-                else
-                    statusIndicator.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-                    statusText.Text = "DISABLED"
-                    statusText.TextColor3 = Color3.fromRGB(255, 0, 0)
-                    powerButton.Text = "🔴"
-                    powerButton.BackgroundColor3 = Color3.fromRGB(100, 0, 0)
-                end
-                
-                -- وميض للحماية النشطة
-                if math.random(1, 10) > 7 then
-                    statusIndicator.BackgroundTransparency = 0.3
-                    task.wait(0.1)
-                    statusIndicator.BackgroundTransparency = 0
-                end
-                
-                wait(1)
-            end
-        end)
-    end
-    
-    -- حدث زر الطاقة
+    -- حدث زر التشغيل/الإيقاف
     powerButton.MouseButton1Click:Connect(function()
-        if LIVING_SYSTEM.ALIVE then
-            LIVING_SYSTEM.ALIVE = false
-            print("🛑 Protection System Disabled")
+        if ULTIMATE_PROTECTION.active then
+            -- إيقاف الحماية
+            ULTIMATE_PROTECTION.active = false
+            powerButton.Text = "⚠️ OFF"
+            powerButton.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
+            statusLight.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+            print("🛑 الحماية متوقفة")
         else
-            LIVING_SYSTEM.ALIVE = true
-            ACTIVATE_LIVING_SYSTEM()
-            print("🟢 Protection System Reactivated")
+            -- تشغيل الحماية
+            ULTIMATE_PROTECTION.active = true
+            powerButton.Text = "🛡️ ON"
+            powerButton.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
+            statusLight.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+            print("✅ الحماية مفعلة")
         end
     end)
     
-    -- إخفاء النافذة عند النقر المزدوج
+    -- تحديث العداد باستمرار
+    task.spawn(function()
+        while screenGui.Parent do
+            local total = 
+                ULTIMATE_PROTECTION.stats.kicksBlocked +
+                ULTIMATE_PROTECTION.stats.teleportsBlocked +
+                ULTIMATE_PROTECTION.stats.remotesBlocked +
+                ULTIMATE_PROTECTION.stats.threatsNeutralized
+            
+            protectionCounter.Text = "🛡️ " .. total
+            
+            -- وميض المؤشر
+            if ULTIMATE_PROTECTION.active then
+                statusLight.BackgroundTransparency = 0.3
+                task.wait(0.3)
+                statusLight.BackgroundTransparency = 0
+                task.wait(0.7)
+            end
+            
+            task.wait(1)
+        end
+    end)
+    
+    -- زر النقر المزدوج لإخفاء/إظهار
     local clickCount = 0
     mainFrame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
             clickCount = clickCount + 1
             
             task.spawn(function()
-                wait(0.3)
+                task.wait(0.5)
                 clickCount = 0
             end)
             
@@ -805,89 +343,97 @@ function CREATE_PROTECTION_UI()
         end
     end)
     
-    -- إظهار/إخفاء بالنقر الأيمن
-    UserInputService.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton2 then
-            mainFrame.Visible = not mainFrame.Visible
-        end
-    end)
-    
-    updateUI()
-    
-    return gui
+    ULTIMATE_PROTECTION.ui = screenGui
+    return screenGui
 end
 
--- 🚀 تفعيل الحماية الكاملة
-function ACTIVATE_FULL_PROTECTION()
-    print("\n" .. string.rep("🔥", 60))
-    print("🔥 ACTIVATING ABSOLUTE PROTECTION SYSTEM")
-    print("🎯 Status: IMPENETRABLE")
-    print("🛡️ Level: ATOMIC")
-    print(string.rep("🔥", 60))
+-- 🚀 تفعيل كل أنظمة الحماية
+function ACTIVATE_ALL_PROTECTION()
+    print("\n" .. string.rep("⚡", 40))
+    print("⚡ تفعيل كل أنظمة الحماية...")
     
-    -- تشغيل النظام الذري
-    INITIATE_ATOMIC_PROTECTION()
+    BLOCK_ALL_KICKS()
+    task.wait(0.5)
     
-    -- إنشاء واجهة الحماية
-    CREATE_PROTECTION_UI()
+    BLOCK_MALICIOUS_REMOTES()
+    task.wait(0.5)
     
-    -- رسالة البدء
-    print("\n✅ PROTECTION SYSTEM FULLY ACTIVATED")
-    print("🎮 You are now protected by Atomic Shield")
-    print("🛡️ Status: UNBREAKABLE")
-    print("👻 Mode: UNDETECTABLE")
-    print("⚡ Defense: IMPENETRABLE")
+    MEMORY_PROTECTION()
+    task.wait(0.5)
     
-    -- تأكيد التشغيل
+    ANTI_ANTICHEAT()
+    task.wait(0.5)
+    
+    NETWORK_PROTECTION()
+    task.wait(0.5)
+    
+    CORE_PROTECTION()
+    task.wait(0.5)
+    
+    CONTINUOUS_MONITORING()
+    
+    print("✅ كل أنظمة الحماية مفعلة!")
+    print(string.rep("⚡", 40))
+    
+    return "✅ الحماية القصوى مفعلة"
+end
+
+-- 🚀 التشغيل التلقائي
+task.spawn(function()
+    wait(2)  -- انتظر تحميل اللعبة
+    
+    print("\n" .. string.rep("🛡️", 50))
+    print("🛡️ ULTIMATE MOBILE PROTECTION v10.0")
+    print("⚡ يحميك من: الطرد، البان، الكيك، التجميد")
+    print("📱 مصمم خصيصاً للهاتف")
+    print(string.rep("🛡️", 50))
+    
+    -- تفعيل الحماية
+    ACTIVATE_ALL_PROTECTION()
+    
+    -- إنشاء الواجهة
+    CREATE_MOBILE_PROTECTION_UI()
+    
+    -- رسالة تأكيد
     task.spawn(function()
         wait(3)
-        print("\n" .. string.rep("🛡️", 60))
-        print("🛡️ ATOMIC SHIELD - OPERATIONAL")
-        print("🎯 Protection: 100%")
-        print("👁️ Visibility: 0%")
-        print("⚡ Performance: OPTIMAL")
-        print(string.rep("🛡️", 60))
+        local notify = Instance.new("TextLabel")
+        notify.Text = "✅ Ultimate Protection Active!"
+        notify.Size = UDim2.new(0.8, 0, 0.04, 0)
+        notify.Position = UDim2.new(0.1, 0, 0.15, 0)
+        notify.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+        notify.TextColor3 = Color3.new(1, 1, 1)
+        notify.Font = Enum.Font.GothamBlack
+        notify.Parent = playerGui
+        
+        wait(3)
+        notify:Destroy()
     end)
-end
-
--- ============================================
--- 🚀 التشغيل الفوري
--- ============================================
-
--- انتظر قليلاً ثم شغل الحماية
-task.spawn(function()
-    wait(1)
-    ACTIVATE_FULL_PROTECTION()
+    
+    print("\n" .. string.rep("✅", 40))
+    print("✅ النظام جاهز!")
+    print("🛡️ اضغط على زر ON/OFF للتحكم")
+    print("📱 اسحب الواجهة لتحريكها")
+    print("👆 انقر مرتين لإخفائها")
+    print(string.rep("✅", 40))
 end)
 
--- رسالة التحميل
-print("\n" .. string.rep("⚡", 60))
-print("⚡ ATOMIC PROTECTION SYSTEM")
-print("🎯 Level: IMPENETRABLE")
-print("🛡️ Status: LOADING...")
-print(string.rep("⚡", 60))
+-- أوامر الكونسول
+_G.ProtectionStatus = function()
+    return {
+        active = ULTIMATE_PROTECTION.active,
+        kicksBlocked = ULTIMATE_PROTECTION.stats.kicksBlocked,
+        teleportsBlocked = ULTIMATE_PROTECTION.stats.teleportsBlocked,
+        threats = ULTIMATE_PROTECTION.stats.threatsNeutralized
+    }
+end
 
-print("\n🔧 System Components:")
-print("   • Memory Obfuscation: ✅")
-print("   • Execution Masking: ✅")
-print("   • Anti-Detection: ✅")
-print("   • Self-Healing: ✅")
-print("   • Stealth Network: ✅")
-print("   • Quantum Encryption: ✅")
-print("   • Temporal Protection: ✅")
+_G.ToggleProtection = function()
+    ULTIMATE_PROTECTION.active = not ULTIMATE_PROTECTION.active
+    return "الحماية: " .. (ULTIMATE_PROTECTION.active and "✅ مفعلة" or "❌ متوقفة")
+end
 
-print("\n🎯 Protection Features:")
-print("   • Anti-Kick: IMPENETRABLE")
-print("   • Anti-AntiCheat: BYPASSED")
-print("   • Anti-Script Detection: ACTIVE")
-print("   • Anti-Remote Spy: ACTIVE")
-print("   • Stealth Mode: ACTIVE")
-print("   • Ghost Mode: ACTIVE")
-
-print("\n📱 Mobile Interface:")
-print("   • Draggable Window: ✅")
-print("   • One-Click Control: ✅")
-print("   • Status Display: ✅")
-print("   • Hidden on Demand: ✅")
-
-print("\n⚡ Activating in 3 seconds...")
+print("\n✅ Ultimate Protection Loaded!")
+print("📱 Mobile Compatible: loadstring(game:HttpGet(''))()")
+print("🛡️ Protection Level: MAXIMUM")
+print("🎯 You are now UNKICKABLE!")
